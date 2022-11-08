@@ -13,22 +13,24 @@
         if (e.keyCode === SPACE_BAR_CODE) {
 			spacePressed = true;
 	}
-        else if (e.keyCode === 65) {
-			spacePressed = true;
-        }
     }
 
     function keyup(e) {
         if (e.keyCode === SPACE_BAR_CODE) {
 			spacePressed = false;
 	}
-        else if (e.keyCode === 65) {
-			spacePressed = false;
-        }
+    }
+    function process_touchstart(ev) {
+	    spacePressed = true;
+    }
+    function process_touchend(ev) {
+	    spacePressed = false;
     }
 
 	document.addEventListener('keydown', keydown, false);
 	document.addEventListener('keyup', keyup, false);
+	docment.addEventListener('touchstart', process_touchstart, false);
+	docment.addEventListener('touchend', process_touchend, false);
 
 	function Game(options) {
 		this.canvas = options.el;
