@@ -12,11 +12,17 @@
 	function keydown(e) {
         if (e.keyCode === SPACE_BAR_CODE) {
 			spacePressed = true;
+	}
+        else if (e.keyCode === 65) {
+			spacePressed = true;
         }
     }
 
     function keyup(e) {
         if (e.keyCode === SPACE_BAR_CODE) {
+			spacePressed = false;
+	}
+        else if (e.keyCode === 65) {
 			spacePressed = false;
         }
     }
